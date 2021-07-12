@@ -1,0 +1,100 @@
+
+.convoBubble {
+
+    &__active, &__passive {
+        width: 70%;
+        height: 15vh;
+        position: relative;
+        margin: 10px 0;
+        align-self: flex-start;
+
+        display: flex;
+        align-items: flex-start;
+        
+        &--pic {
+            height: 60px;
+            width: 60px;
+            border-radius: 150px;
+            border: 2px solid #ff7730;
+            box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.6);
+            padding: 5px;
+            margin: 0 5px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        &__box {
+            margin-left: 10px;
+            position: relative;
+            padding: 5px 10px;
+            color: #333;
+            border-radius: 4px;
+            border-top-left-radius: 0;
+            background: linear-gradient(to bottom, #ffb900, #ff7730);
+            box-shadow: 0 5px 10px -3px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s ease;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: -15px;
+                top: 0;
+                width: 15px;
+                height: 15px;
+                background: #ffb900;
+                clip-path: polygon(0 0, 100% 100%, 100% 0);
+            }
+        }
+
+        &--delete {
+            background: transparent;
+            text-align: center;
+            font-weight: 600;
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            display: inline-block;
+            padding: 0 5px 0 10px;
+        }
+
+        &--name {
+            display: inline-block;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        &--date {
+            font-size: 0.8rem;
+            padding-bottom: 15px;
+        }
+
+        &--text {
+            text-align: justify;
+        }
+    }
+
+    &__passive {
+        align-self: flex-end;
+        justify-content: flex-end;
+        
+        &--pic {
+            border: 2px solid #28b485;
+            order: 1;
+        }
+
+        &__box {
+            margin-right: 10px;
+            border-top-right-radius: 0;
+            border-top-left-radius: 4px;
+            background: linear-gradient(to bottom, #7ed56f, #28b485);
+            
+            &::after {
+                left: unset;
+                right: -15px;
+                background: #7ed56f;
+                clip-path: polygon(0 0, 0 100%, 100% 0);
+            }
+        }
+    }
+}
